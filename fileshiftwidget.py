@@ -35,7 +35,7 @@ def new_file_alert(log_info):
     root.eval('tk::PlaceWindow . center')
 
     welcome_message = Label(root,
-                            text="You have created the file {fname} at {ftime}\n".format(fname=log_info[0], ftime=log_info[1]))
+                            text="You have created the file {fname}\n".format(fname=log_info[0]))
     welcome_message.grid(row=0, column=0, columnspan=3)
 
     file_shift_message = Label(root, text="Would you like to change the location of this file?\n")

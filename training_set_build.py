@@ -1,4 +1,3 @@
-import csv
 
 DOC_TYPES = ["txt", "word", "pdf"]
 VIDEO_TYPES = ["mp4", "mov", "wmv"]
@@ -25,17 +24,5 @@ def file_classification(file_dits):
         return 5
 
 # A function to build a data and target matrices to be used as training dataset for a decision tree algorithm later on
-
-
-def data_target_mat_build(path):
-    data_mat = []
-    target = []
-    with open(path, "r") as cur_file:
-        reader = csv.reader(cur_file)
-        for row in reader:
-            if row:
-                target.append(row[-1])
-                data_mat.append(row)
-    return data_mat, target
 
 

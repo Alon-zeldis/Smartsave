@@ -16,6 +16,8 @@ class Event(LoggingEventHandler):
         cur_dits = file_details.file_dits()
         cls = training_set_build.file_classification(cur_dits)
         cur_dits.append(cls)
+        if cur_dits[2] != event.src_path and not event.src_path.endswith((".tmp", "crdownload")):
+            return
         with open("files_data.csv", "a", encoding="utf-8") as cur_file:
             writer = csv.writer(cur_file)
             writer.writerow(cur_dits)
